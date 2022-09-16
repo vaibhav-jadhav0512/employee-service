@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.dto.EmpDeptDto;
@@ -27,6 +28,7 @@ public class EmployeeController {
 
 	@PostMapping("/save")
 	public Employee saveEmployee(@RequestBody Employee employee) {
+		System.out.println(employee);
 		return service.saveEmployee(employee);
 	}
 
@@ -48,6 +50,11 @@ public class EmployeeController {
 	@PutMapping("/update/{id}")
 	public Employee updateEmployee(@RequestBody Employee department, @PathVariable("id") Long id) {
 		return service.updateEmployee(department, id);
+	}
+	
+	@PutMapping("/url")
+	public void updateUrl(@RequestParam("id") Long id, @RequestParam("url")String url) {
+		 service.updateUrl(id, url);
 	}
 
 	@DeleteMapping("/delete/{id}")

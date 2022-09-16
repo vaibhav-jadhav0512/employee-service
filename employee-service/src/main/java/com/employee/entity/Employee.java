@@ -16,6 +16,7 @@ public class Employee {
 	private String empName;
 	private String email;
 	private Long departmentId;
+	private String imgUrl;
 
 	public Long getEmpId() {
 		return empId;
@@ -49,10 +50,18 @@ public class Employee {
 		this.departmentId = departmentId;
 	}
 
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", email=" + email + ", departmentId="
-				+ departmentId + "]";
+				+ departmentId + ", imgUrl=" + imgUrl + "]";
 	}
 
 }

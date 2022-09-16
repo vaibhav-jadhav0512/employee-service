@@ -45,4 +45,8 @@ public class EmployeeService {
 		repository.deleteById(id);
 	}
 
+	public void updateUrl(Long id, String url) {
+		 repository.updateUrl(url,id);
+	}
+
 }
